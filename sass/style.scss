@@ -1,0 +1,136 @@
+body {
+    margin: 0;
+
+    header {
+        background-color: black;
+        color: #FCBE32;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding-left: 20px;
+        padding-right: 20px;
+
+        .menuCache {
+            position: absolute;
+            width: 300px;
+            height: 700px;
+            background-color: rgba(0, 0, 0, 0.85);
+            top: 0vh;
+            right: 0vw;
+            transform: translateX(350px);
+            transition: transform 0.5s;
+
+            .exitMenu {
+                width: 50px;
+                height: 50px;
+                padding: 20px;
+
+                .exit1 {
+                    width: 40px;
+                    height: 5px;
+                    background-color: #FCBE32;
+                    border-radius: 2px 2px 2px 2px;
+                    transform: rotate(45deg);
+                }
+                
+                .exit2 {
+                    width: 40px;
+                    height: 5px;
+                    background-color: #FCBE32;
+                    border-radius: 2px 2px 2px 2px;
+                    transform: rotate(-45deg) translateY(-5px) translateX(2.5px);
+                }
+            }
+        }
+
+        input {
+            display: none;
+        }
+
+        .menuBurger {
+            width: 50px;
+            height: 50px;
+            background-color: #FCBE32;
+            border-radius: 5px 5px 5px 5px;
+            display: flex;
+            justify-content: space-evenly;
+            flex-direction: column;
+            align-items: center;
+
+            .burger1 {
+                width: 35px;
+                height: 5px;
+                background-color: black;
+                border-radius: 2px 2px 2px 2px;
+            }
+
+            .burger2 {
+                display: flex;
+                justify-content: space-between;
+
+                .div1 {
+                    width: 10px;
+                }
+
+                .div2 {
+                    width: 25px;
+                    height: 5px;
+                    background-color: black;
+                    border-radius: 2px 2px 2px 2px;
+                }
+            }
+            
+            .burger3 {
+                width: 35px;
+                height: 5px;
+                background-color: black;
+                border-radius: 2px 2px 2px 2px;
+            }
+        }
+
+        #chkBurger:checked ~ .menuCache {
+            transform: translateX(0px);
+        }
+    }
+
+    main {
+        background-color: #14243C;
+        min-height: 100vh;
+
+        .txtMain {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-around;
+            text-align: center;
+            color: white;
+        }
+
+        .img {
+            width: 100vw;
+            height: 300px;
+            background-color: #FCBE32;
+        }
+
+        .boutonCours {
+            position: relative;
+            top: 70px;
+            left: 60vw;
+
+            .btn1 {
+                height: 5px;
+                width: 90px;
+                background-color: #FCBE32;
+                margin-bottom: 5px;
+                position: relative;
+                left: 60px;
+            }
+
+            .btn2 {
+                width: 150px;
+                height: 50px;
+                background-color: #FCBE32;
+            }
+        }
+    }
+}

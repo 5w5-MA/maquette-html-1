@@ -18,28 +18,10 @@ body header .menuCache {
   background-color: rgba(0, 0, 0, 0.85);
   top: 0vh;
   right: 0vw;
+  overflow-x: hidden;
   transform: translateX(100%);
-  transition: transform 0.5s;
+  transition: transform 0.5s, padding-bottom 2s;
   z-index: 10;
-}
-body header .menuCache .exitMenu {
-  width: 50px;
-  height: 50px;
-  padding: 20px;
-}
-body header .menuCache .exitMenu .exit1 {
-  width: 40px;
-  height: 5px;
-  background-color: #fcbe32;
-  border-radius: 2px 2px 2px 2px;
-  transform: rotate(45deg);
-}
-body header .menuCache .exitMenu .exit2 {
-  width: 40px;
-  height: 5px;
-  background-color: #fcbe32;
-  border-radius: 2px 2px 2px 2px;
-  transform: rotate(-45deg) translateY(-5px) translateX(2.5px);
 }
 body header .menuCache .optionMenu {
   display: flex;
@@ -48,6 +30,23 @@ body header .menuCache .optionMenu {
   flex-direction: column;
   color: white;
   height: 600px;
+}
+@media screen and (min-width: 900px) {
+  body header .menuCache {
+    position: none;
+    width: auto;
+    height: auto;
+    transform: translateX(0%);
+    background-color: rgba(0, 0, 0, 0);
+  }
+  body header .menuCache .optionMenu {
+    flex-direction: row;
+    justify-content: flex-end;
+    gap: 5vw;
+    height: auto;
+    padding-right: 2vw;
+    right: 10vw;
+  }
 }
 body header input {
   display: none;
@@ -61,6 +60,7 @@ body header .menuBurger {
   justify-content: space-evenly;
   flex-direction: column;
   align-items: center;
+  z-index: 11;
 }
 body header .menuBurger .burger1 {
   width: 35px;
@@ -74,12 +74,14 @@ body header .menuBurger .burger2 {
 }
 body header .menuBurger .burger2 .div1 {
   width: 10px;
+  transition: width 0.5s;
 }
 body header .menuBurger .burger2 .div2 {
   width: 25px;
   height: 5px;
   background-color: black;
   border-radius: 2px 2px 2px 2px;
+  transition: width 0.5s;
 }
 body header .menuBurger .burger3 {
   width: 35px;
@@ -87,8 +89,20 @@ body header .menuBurger .burger3 {
   background-color: black;
   border-radius: 2px 2px 2px 2px;
 }
+@media screen and (min-width: 900px) {
+  body header .menuBurger {
+    display: none;
+  }
+}
 body header #chkBurger:checked ~ .menuCache {
   transform: translateX(0px);
+  padding-bottom: 1000px;
+}
+body header #chkBurger:checked ~ .menuBurger .burger2 .div1 {
+  width: 0px;
+}
+body header #chkBurger:checked ~ .menuBurger .burger2 .div2 {
+  width: 35px;
 }
 body main {
   background-color: #14243c;
@@ -118,12 +132,26 @@ body main .img {
   text-align: center;
   align-content: center;
 }
+@media screen and (min-width: 900px) {
+  body main .img {
+    height: 50vw;
+  }
+}
+@media screen and (min-width: 1100px) {
+  body main .img {
+    height: 550px;
+    width: 60vw;
+    justify-self: flex-end;
+    left: 40vw;
+  }
+}
 body main .boutonCours {
   position: relative;
   top: -7vh;
   left: 3vw;
   transition: scale 0.5s, transform 0.5s;
   width: 150px;
+  scale: 80%;
 }
 body main .boutonCours .btn1 {
   height: 5px;
@@ -221,6 +249,11 @@ body main .infoCegep .divPolygone .div2 {
   background-color: white;
   height: 40px;
 }
+@media screen and (min-width: 900px) {
+  body main .infoCegep .divPolygone {
+    width: 50vw;
+  }
+}
 body main .infoLogiciel {
   display: flex;
   justify-content: flex-end;
@@ -242,6 +275,15 @@ body main .infoLogiciel .divPolygone .div2 {
   background-color: #fcbe32;
   height: 40px;
 }
+@media screen and (min-width: 900px) {
+  body main .infoLogiciel {
+    position: relative;
+    top: -200px;
+  }
+  body main .infoLogiciel .divPolygone {
+    width: 50vw;
+  }
+}
 body main .description {
   background-color: white;
   font-size: small;
@@ -254,6 +296,7 @@ body main .description {
   -webkit-clip-path: polygon(0 0, 80% 0, 100% 100%, 0 100%);
           clip-path: polygon(0 0, 80% 0, 100% 100%, 0 100%);
   margin-bottom: 100px;
+  padding: 10px;
 }
 body main .description div {
   width: 64vw;
@@ -293,4 +336,8 @@ body footer {
   color: white;
   text-align: center;
   align-content: center;
+}
+
+.pasDeScroll {
+  overflow-y: hidden;
 }/*# sourceMappingURL=style.css.map */

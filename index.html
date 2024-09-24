@@ -4,17 +4,13 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="sass/style.css" />
   </head>
   <body>
     <header>
       <h1>TIM</h1>
       <input type="checkbox" id="chkBurger" />
       <div class="menuCache">
-        <label for="chkBurger" class="exitMenu">
-          <div class="exit1"></div>
-          <div class="exit2"></div>
-        </label>
         <div class="optionMenu">
           <h2>à propos</h2>
           <h2>cours</h2>
@@ -84,4 +80,14 @@
     </main>
     <footer>footer</footer>
   </body>
+  <script>
+    document.getElementById("chkBurger").addEventListener("change", function() {
+      if (this.checked) {
+        document.body.classList.add("pasDeScroll");
+      }
+      else {
+        document.body.classList.remove("pasDeScroll");
+      }
+    });
+  </script>
 </html>
